@@ -18,7 +18,7 @@ function jumpProcess() {
         document.title = DEFAULT_TITLE;
         $('#form').show();
         $('#gtor').hide();
-        window.location.href = 'rgg.html';
+        window.location.href = 'index.html';
         return;
     }
     var queryObj = {
@@ -26,7 +26,7 @@ function jumpProcess() {
         toAccept: toAccept,
     };
 
-    window.location.href = 'rgg.html?' + $.param(queryObj);
+    window.location.href = 'index.html?' + $.param(queryObj);
     $('input[name=members]').val(members);
     $('input[name=toAccept]').val(toAccept);
 }
