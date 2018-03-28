@@ -1,0 +1,46 @@
+<!-- ソース見ないでって言ったのにぃー！ 恥ずかしい！ -->
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./generator.js"></script>
+    <script type="text/javascript" src="./purl.js"></script>
+
+    <style type="text/css">
+      p#graffiti {
+        word-wrap: break-word;
+      }
+      p.hint {
+        font-size: 75%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="form">
+      <p>
+        ランダムに生成される要素たち：<input type="text" name="members" />
+      </p>
+      <p>
+        終了条件とする文字列：<input type="text" name="toAccept" />
+      </p>
+      <p class="hint">生成される要素を複数指定する場合は「<code>, </code>」で区切ってください．カンマの後のスペースを忘れちゃだめですよ．もしそれらを生成したい場合はパーセントでエスケープすればいいです（カンマは <code>%2C</code>，スペースは <code>%20</code>）</p>
+      <p class="hint">
+        ソースは綺麗じゃないので見ちゃ嫌ですよ．
+      </p>
+      <p>
+        <button id="generate">生成</button>
+      </p>
+    </div>
+
+    <div id="gtor">
+      <h1 id="generatorName">たいとる</h1>
+      <button id="randomGenerate">開始</button>
+      <button id="resign">諦める</button>
+      <p id="graffiti"></p>
+    </div>
+  </body>
+</html>
