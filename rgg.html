@@ -21,13 +21,14 @@
 
   <body>
     <div id="form">
+      <h1>何かしらをランダムに出力して何かしらが完成したらやめるやつを作るやつ</h1>
       <p>
         ランダムに生成される要素たち：<input type="text" name="members" />
       </p>
       <p>
         終了条件とする文字列：<input type="text" name="toAccept" />
       </p>
-      <p class="hint">生成される要素を複数指定する場合は「<code>, </code>」で区切ってください．カンマの後のスペースを忘れちゃだめですよ．もしそれらを生成したい場合はパーセントでエスケープすればいいです（カンマは <code>%2C</code>，スペースは <code>%20</code>）</p>
+      <p class="hint">生成される要素を複数指定する場合は「<code>, </code>」で区切ってください．カンマの後のスペースを忘れちゃだめですよ．もしそれらを生成したい場合はパーセントでエンコードすればいいです（カンマは <code>%252C</code>，スペースは <code>%2520</code>，パーセントは <code>%2525</code>）．もっとマシな方法を採用したいです．</p>
       <p class="hint">
         ソースは綺麗じゃないので見ちゃ嫌ですよ．
       </p>
@@ -37,7 +38,7 @@
     </div>
 
     <div id="gtor">
-      <h1 id="generatorName">たいとる</h1>
+      <h1 id="generatorName">ここにタイトルが入る</h1>
       <button id="randomGenerate">開始</button>
       <button id="resign">諦める</button>
       <p id="graffiti"></p>

@@ -8,7 +8,7 @@ function randInt(lb, ub) {
 }
 
 function jumpProcess() {
-    $('#randomGenerate').unbind('click');
+    //$('#randomGenerate').unbind('click');
 
     var members = $('input[name=members]').val();
     var toAccept = $('input[name=toAccept]').val();
@@ -34,7 +34,7 @@ function jumpProcess() {
 function generateGenerator() {
     var members = $('input[name=members]').val();
     var toAccept = $('input[name=toAccept]').val();
-    var mem = members.split(', ');
+    var mem = members.split(/, |%2C\+/);
     var title = '';
     for (var i = 0; i < mem.length; ++i) {
         mem[i] = decodeURIComponent(mem[i]);
@@ -73,14 +73,6 @@ $(function() {
     $('input[name=members]').val(params.members);
     $('input[name=toAccept]').val(params.toAccept);
 
-    if (params.members == '' || params.members === undefined
-        || params.toAccept == '' || params.toAccept === undefined) {
-
-        // ...
-    } else {
-        generateGenerator();
-    }
-
     $(document).on('keypress', 'input[name=members]', function(e) {
         if (e.keyCode == 13)
             jumpProcess();
@@ -97,8 +89,17 @@ $(function() {
     $('#resign').on('click', function() {
         $('input[name=members]').val('');
         $('input[name=toAccept]').val('');
+        jumpProcess()
         $('#gtor').hide();
         $('#form').show();
         document.title = DEFAULT_TITLE;
     });
+
+    if (params.members == '' || params.members === undefined
+        || params.toAccept == '' || params.toAccept === undefined) {
+
+        // ...
+    } else {
+        generateGenerator();
+    }
 });
